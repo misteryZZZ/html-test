@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind variants;
+
+.h2 {
+  line-height: 52.8px;
+}
+
+.h3 {
+  line-height: 35.2px;
+}
+
+.h4 {
+  line-height: 29.76px;
+}
+
+.h5 {
+  line-height: 19.52px;
+}
+
+.p-normal {
+  line-height: 21px;
+  font-size: 14px;
+  letter-spacing: 0.32px;
+}
+
+.bg-custom-1 {
+  background: linear-gradient(0deg, rgba(246, 246, 247, 0.1), rgba(246, 246, 247, 0.1)), linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+}
+
+.pt-374 {
+  padding-top: 374px;
+}
+
+.outlined-text-number {
+  -webkit-text-stroke: 1px #EF1607; 
+  color: black; 
+}
+
+.outlined-text-number-i {
+  -webkit-text-stroke: 1px black; 
+  color: #EF1607;
+}
+
+.unbounded-heading {
+  font-family: "Unbounded", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+ul.li-with-checkmark li{
+  background-image: url('/images/check-mark-icon.png');
+  background-size: 18px 18px;
+  background-position: 0px 1px;
+  background-repeat: no-repeat;
+  padding-left: 26px;
+  line-height: 25px;
+  letter-spacing: 0.32px;
+}
+
+input.normal {
+  line-height: 17.02px;
+  letter-spacing: 1.92px;
+  text-transform: uppercase;
+}
+
+.instrument-sans {
+  font-family: "Instrument Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
