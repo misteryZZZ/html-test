@@ -8,108 +8,247 @@
   <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
   <link href="./styles/output.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-black text-white">
-  <header class="w-full left-0 mx-auto flex justify-between items-center px-14 fixed top-0 z-50 text-white">
-    <!-- Brand (Left) -->
-    <div class="brand py-8">
-      <a href="#" class="text-[40px] font-bold unbounded-heading">PULSE</a>
+  <header class="w-full left-0 mx-auto flex justify-between items-center px-6 md:px-14 fixed top-0 z-50 text-white">
+    <div class="brand py-4 md:py-10">
+      <a href="#" class="text-[30px] md:text-[40px] font-bold unbounded-heading">PULSE</a>
     </div>
 
-    <!-- Menu (Right) -->
-    <nav class="menu py-8 space-x-6 instrument-sans uppercase text-sm gap-8 font-bold tracking-[0.84px]">
+    <nav class="hidden md:flex menu py-4 md:py-10 space-x-6 instrument-sans uppercase text-xs md:text-sm gap-4 md:gap-8 font-bold tracking-wide">
       <a href="#" class="hover:text-gray-300">Accueil</a>
       <a href="#" class="hover:text-gray-300">Services</a>
       <a href="#" class="hover:text-gray-300">Coachs</a>
       <a href="#" class="hover:text-gray-300">Tarifs</a>
       <a href="#" class="hover:text-gray-300">Contact</a>
       <a href="#" class="hover:text-gray-300 pl-2">
-        <button class="h-10 px-7 py-3.5 bg-red rounded-full justify-center items-center gap-2.5 inline-flex font-semibold">
+        <button class="h-8 md:h-10 px-5 md:px-7 py-2 md:py-3.5 bg-red rounded-full justify-center items-center gap-2 inline-flex font-semibold">
           RÉSERVER 
-          <svg xmlns="http://www.w3.org/2000/svg" width="13" height="14" viewBox="0 0 13 14" fill="none">
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="13" viewBox="0 0 13 14" fill="none">
             <path d="M0 7H11M11 7L5.5 1.5M11 7L5.5 12.5" stroke="white" stroke-width="1.5"/>
           </svg>
         </button>
       </a>
     </nav>
-  </header>
-  <div class="hero w-full text-white bg-cover relative h-[850px]" style="background-image: url('./images/hero-bg.jpeg');">
-    <div class="flex flex-col w-774 items-start ml-14 gap-8 pt-374">
-      <h1 class="text-[64px] tracking-[-1.28px] leading-none font-semibold unbounded-heading">VOTRE PUISSANCE, NOTRE MISSION</h1>
-      <p class="w-442 font-normal text-[16px] leading-normal tracking-[0.32px] instrument-sans">Premier mois à 50% de réduction pour les nouveaux membres sur les abonnements mensuels.</p>
+
+    <!-- Mobile Menu Button -->
+    <div class="md:hidden">
+      <button id="menu-toggle" class="focus:outline-none">
+        <!-- Icon for menu toggle (e.g., hamburger icon) -->
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
     </div>
-    <div class="h-[203px] justify-start items-center inline-flex absolute left-0 right-0 bottom-0">
-      <img class="grow shrink basis-0 self-stretch" src="./images/girl-back.png" />
-      <div class="grow shrink basis-0 self-stretch p-10 bg-white/10 backdrop-blur-lg flex-col justify-start items-start gap-8 inline-flex">
-        <div class="justify-center items-center gap-2.5 inline-flex">
-          <div class="text-white text-2xl font-medium unbounded-heading">ÉLEVEZ-VOUS</div>
-        </div>
-        <div class="self-stretch text-white text-sm font-medium instrument-sans leading-[21px] tracking-tight">Notre salle est équipée des meilleurs équipements et notre équipe de coachs dévoués est prête à vous accompagner à chaque étape de votre parcours fitness. </div>
-      </div>
-      <div class="grow shrink basis-0 self-stretch p-10 bg-white/10 border-l border-white/20 backdrop-blur-lg flex-col justify-start items-start gap-8 inline-flex">
-        <div class="justify-center items-center gap-2.5 inline-flex">
-          <div class="text-white text-2xl font-medium unbounded-heading">FORCE & PASSION</div>
-        </div>
-        <div class="self-stretch text-white text-sm font-medium instrument-sans leading-[21px] tracking-tight">Que vous soyez débutant ou athlète confirmé, vous trouverez ici un environnement accueillant et motivant pour atteindre vos objectifs, où chaque entraînement est une opportunité de dépassement de soi..</div>
-      </div>
-    </div>
+
+    <!-- Mobile Menu -->
+<div id="mobile-menu" class="hidden absolute top-0 left-0 w-full h-screen bg-black py-10 px-8 text-left space-y-4 instrument-sans uppercase text-xs font-bold tracking-wide">
+  <div class="brand top-4 left-4">
+    <a href="#" class="text-[30px] md:text-[40px] font-bold unbounded-heading">PULSE</a>
   </div>
-  <div class="programme py-20 gap-14 w-full overflow-hidden">
-    <div class="flex justify-between items-end px-28 pb-14">
-      <div class="text-left w-446">
-        <h5 class="text-black text-[24px] font-bold outlined-text-number instrument-sans pb-4">01</h5>
-        <h2 class="h2 font-medium uppercase text-[48px] text-white unbounded-heading">Nos programmes</h2>
-      </div>
-      <div class="text-left w-553">
-        <p class="text-white font-normal text-[16px] tracking-[0.32px] leading-19.52 instrument-sans">Notre salle est équipée des meilleurs équipements et notre équipe de coachs dévoués est prête à vous accompagner à chaque étape de votre parcours fitness. Que vous soyez débutant ou athlète confirmé, vous trouverez ici un environnement accueillant et motivant pour atteindre vos objectifs</p>
-      </div>
+  <button id="close-menu" class="text-white absolute top-4 right-4 focus:outline-none">
+    <!-- Close Icon -->
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none">
+      <path d="M18 6L6 18M6 6l12 12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+  <a href="#" class="block hover:text-gray-300 text-2xl pt-[60px]">Accueil</a>
+  <a href="#" class="block hover:text-gray-300 text-2xl">Services</a>
+  <a href="#" class="block hover:text-gray-300 text-2xl">Coachs</a>
+  <a href="#" class="block hover:text-gray-300 text-2xl">Tarifs</a>
+  <a href="#" class="block hover:text-gray-300 text-2xl">Contact</a>
+  <a href="#" class="block hover:text-gray-300 text-2xl pt-[80px]">
+    <button class="h-8 px-5 py-8 bg-red rounded-full justify-center items-center w-full gap-2 inline-flex font-semibold">
+      RÉSERVER 
+      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="13" viewBox="0 0 13 14" fill="none">
+        <path d="M0 7H11M11 7L5.5 1.5M11 7L5.5 12.5" stroke="white" stroke-width="1.5"/>
+      </svg>
+    </button>
+  </a>
+</div>
+  </header>
+
+  <div class="hero w-full text-white bg-cover relative h-[350px] md:h-[850px]" style="background-image: url('./images/hero-bg.jpeg');">
+    <div class="relative flex flex-col w-full items-center md:items-start px-4 md:ml-14 gap-4 md:gap-8 pt-[150px] md:pt-[374px]">
+      <h1 class="text-[32px] md:text-[64px] tracking-tight md:tracking-[-1.28px] leading-tight md:leading-none font-semibold unbounded-heading text-left md:text-left">VOTRE PUISSANCE, NOTRE MISSION</h1>
+      <p class="w-full md:w-[442px] font-normal text-[14px] md:text-[16px] leading-normal tracking-wide md:tracking-[0.32px] instrument-sans text-left md:text-left">Premier mois à 50% de réduction pour les nouveaux membres sur les abonnements mensuels.</p>
     </div>
-    <div class="pl-28 flex justify-between overflow-hidden gap-6 flex-nowrap min-w-max">
-      <div class="h-479 w-[470px] bg-cover" style="background-image: url('./images/woman-lifting-bar-min.jpg');">
-        <div class="flex flex-col justify-end  px-8 py-10 gap-10 h-[100%] bg-gradient-to-t from-black to-transparent">
-          <h3 class="h3 text-[32px] text-red font-bold uppercase unbounded-heading tracking-[0.32px]">Séance<span class="block">CrossFit</span></h3>
-          <p class="p-normal instrument-sans">Nos sessions WOD (Workout of the Day) sont conçues pour améliorer votre force, endurance et agilité, avec des mouvements fonctionnels adaptés à chacun.</p>
+
+   <!-- Slider for Desktop (hidden on mobile) -->
+   <div class="slider-mobile h-[203px] justify-start items-center inline-flex absolute left-0 right-0 bottom-0 hidden md:flex">
+    <img class="grow shrink basis-0 self-stretch" src="./images/girl-back.png" />
+    <div class="grow shrink basis-0 self-stretch p-10 bg-white/10 backdrop-blur-lg flex-col justify-start items-start gap-8 inline-flex">
+        <div class="justify-center items-center gap-2.5 inline-flex">
+            <div class="text-white text-2xl font-medium unbounded-heading">ÉLEVEZ-VOUS</div>
         </div>
+        <div class="self-stretch text-white text-sm font-medium instrument-sans leading-[21px] tracking-tight">Notre salle est équipée des meilleurs équipements et notre équipe de coachs dévoués est prête à vous accompagner à chaque étape de votre parcours fitness.</div>
+    </div>
+    <div class="grow shrink basis-0 self-stretch p-10 bg-white/10 border-l border-white/20 backdrop-blur-lg flex-col justify-start items-start gap-8 inline-flex">
+        <div class="justify-center items-center gap-2.5 inline-flex">
+            <div class="text-white text-2xl font-medium unbounded-heading">FORCE & PASSION</div>
+        </div>
+        <div class="self-stretch text-white text-sm font-medium instrument-sans leading-[21px] tracking-tight">Que vous soyez débutant ou athlète confirmé, vous trouverez ici un environnement accueillant et motivant pour atteindre vos objectifs, où chaque entraînement est une opportunité de dépassement de soi.</div>
+    </div>
+</div>
+</div>
+
+<!-- Mobile Hero (hidden on desktop) -->
+<div class="slider-mobile md:hidden flex h-[200px] justify-start items-center relative bottom-0 overflow-x-auto snap-x snap-mandatory">
+    <!-- Slide 1 -->
+    <div class="flex-none w-[100vw] h-full snap-center bg-white/10 backdrop-blur-lg md:bg-white/10 backdrop-blur-lg flex flex-col justify-start items-start gap-4 relative slide" data-slide="1">
+      <div class="text-white text-xl md:text-2xl font-medium unbounded-heading p-4">ÉLEVEZ-VOUS</div>
+      <div class="text-white text-sm font-medium instrument-sans leading-[21px] tracking-tight p-4">Notre salle est équipée des meilleurs équipements et notre équipe de coachs dévoués est prête à vous accompagner à chaque étape de votre parcours fitness.</div>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="flex-none w-[100vw] h-full snap-center bg-white/10 backdrop-blur-lg md:bg-white/10 backdrop-blur-lg border-l border-white/20 flex flex-col justify-start items-start gap-4 slide" data-slide="2">
+      <div class="text-white text-xl md:text-2xl font-medium unbounded-heading p-4">FORCE & PASSION</div>
+      <div class="text-white text-sm font-medium instrument-sans leading-[21px] tracking-tight p-4">Que vous soyez débutant ou athlète confirmé, vous trouverez ici un environnement accueillant et motivant pour atteindre vos objectifs.</div>
+    </div>
+</div>
+
+  <!-- Programme Section -->
+<div class="programme py-20 gap-14 w-full overflow-hidden">
+  <div class="flex flex-col md:flex-row justify-between items-start md:items-end px-6 md:px-28 pb-14">
+    <div class="text-left w-full md:w-446">
+        <h5 class="text-black text-[24px] font-bold outlined-text-number instrument-sans pb-4">01</h5>
+        <h2 class="h2 font-medium uppercase text-[32px] md:text-[48px] text-white unbounded-heading">Nos programmes</h2>
+    </div>
+    <div class="text-left w-full md:w-553">
+        <p class="text-white font-normal text-[14px] md:text-[16px] tracking-[0.32px] leading-[19.52px] instrument-sans">
+            Notre salle est équipée des meilleurs équipements et notre équipe de coachs dévoués est prête à vous accompagner à chaque étape de votre parcours fitness. Que vous soyez débutant ou athlète confirmé, vous trouverez ici un environnement accueillant et motivant pour atteindre vos objectifs.
+        </p>
+    </div>
+</div>
+
+  <!-- Carousel for Mobile (hidden on desktop) -->
+  <div class="md:hidden overflow-hidden">
+      <div class="carousel snap-x snap-mandatory flex gap-4 overflow-x-auto">
+          <!-- Slide 1 -->
+          <div class="flex-none w-[90vw] h-[300px] bg-cover snap-start" style="background-image: url('./images/woman-lifting-bar-min.jpg');">
+              <div class="flex flex-col justify-end px-4 py-4 gap-2 h-full bg-gradient-to-t from-black to-transparent">
+                  <h3 class="h3 text-[24px] text-red font-bold uppercase unbounded-heading tracking-[0.32px]">Séance<span class="block">CrossFit</span></h3>
+                  <p class="p-normal instrument-sans">Nos sessions WOD (Workout of the Day) sont conçues pour améliorer votre force, endurance et agilité, avec des mouvements fonctionnels adaptés à chacun.</p>
+              </div>
+          </div>
+          <!-- Slide 2 -->
+          <div class="flex-none w-[90vw] h-[300px] bg-cover snap-start" style="background-image: url('./images/close-up-man-doing-crossfit-workout-min.jpg');">
+              <div class="flex flex-col justify-end px-4 py-4 gap-2 h-full bg-gradient-to-t from-black to-transparent">
+                  <h3 class="h3 text-[24px] text-red font-bold uppercase unbounded-heading tracking-[0.32px]">Coaching<span class="block">personnel</span></h3>
+                  <p class="p-normal instrument-sans">Un accompagnement personnalisé pour atteindre vos objectifs plus rapidement. Nos coachs experts vous guident avec des programmes adaptés à vos besoins et votre niveau.</p>
+              </div>
+          </div>
+          <!-- Slide 3 -->
+          <div class="flex-none w-[90vw] h-[300px] bg-cover snap-start" style="background-image: url('./images/young-crossfit-athlete-doing-pull-ups-gym-handsome-man-doing-functional-training-practicing-calisthenics-min.jpg');">
+              <div class="flex flex-col justify-end px-4 py-4 gap-2 h-full bg-gradient-to-t from-black to-transparent">
+                  <h3 class="h3 text-[24px] text-red font-bold uppercase unbounded-heading tracking-[0.32px]">Programme<span class="block">spécialisé</span></h3>
+                  <p class="p-normal instrument-sans">Des programmes sur mesure pour répondre à vos besoins spécifiques : préparation physique, endurance, remise en forme postnatale, et bien plus encore.</p>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!-- Static Cards for Desktop -->
+  <div class="hidden md:flex justify-between overflow-hidden gap-6 flex-nowrap min-w-max">
+      <div class="h-479 w-[470px] bg-cover" style="background-image: url('./images/woman-lifting-bar-min.jpg');">
+          <div class="flex flex-col justify-end px-8 py-10 gap-10 h-full bg-gradient-to-t from-black to-transparent">
+              <h3 class="h3 text-[32px] text-red font-bold uppercase unbounded-heading tracking-[0.32px]">Séance<span class="block">CrossFit</span></h3>
+              <p class="p-normal instrument-sans">Nos sessions WOD (Workout of the Day) sont conçues pour améliorer votre force, endurance et agilité, avec des mouvements fonctionnels adaptés à chacun.</p>
+          </div>
       </div>
       <div class="h-479 w-[470px] bg-cover" style="background-image: url('./images/close-up-man-doing-crossfit-workout-min.jpg');">
-        <div class="flex flex-col justify-end  px-8 py-10 gap-10 h-[100%] bg-gradient-to-t from-black to-transparent">
-          <h3 class="h3 text-[32px] text-red font-bold uppercase unbounded-heading tracking-[0.32px]">Coaching<span class="block">personnel</span></h3>
-          <p class="p-normal instrument-sans">Un accompagnement personnalisé pour atteindre vos objectifs plus rapidement. Nos coachs experts vous guident avec des programmes adaptés à vos besoins et votre niveau.</p>
-        </div>
+          <div class="flex flex-col justify-end px-8 py-10 gap-10 h-full bg-gradient-to-t from-black to-transparent">
+              <h3 class="h3 text-[32px] text-red font-bold uppercase unbounded-heading tracking-[0.32px]">Coaching<span class="block">personnel</span></h3>
+              <p class="p-normal instrument-sans">Un accompagnement personnalisé pour atteindre vos objectifs plus rapidement. Nos coachs experts vous guident avec des programmes adaptés à vos besoins et votre niveau.</p>
+          </div>
       </div>
       <div class="h-479 w-[470px] bg-cover" style="background-image: url('./images/young-crossfit-athlete-doing-pull-ups-gym-handsome-man-doing-functional-training-practicing-calisthenics-min.jpg');">
-        <div class="flex flex-col justify-end  px-8 py-10 gap-10 h-[100%] bg-gradient-to-t from-black to-transparent">
-          <h3 class="h3 text-[32px] text-red font-bold uppercase unbounded-heading tracking-[0.32px]">Programme<span class="block">spécialisé</span></h3>
-          <p class="p-normal instrument-sans">Des programmes sur mesure pour répondre à vos besoins spécifiques : préparation physique, endurance, remise en forme postnatale, et bien plus encore.</p>
+          <div class="flex flex-col justify-end px-8 py-10 gap-10 h-full bg-gradient-to-t from-black to-transparent">
+              <h3 class="h3 text-[32px] text-red font-bold uppercase unbounded-heading tracking-[0.32px]">Programme<span class="block">spécialisé</span></h3>
+              <p class="p-normal instrument-sans">Des programmes sur mesure pour répondre à vos besoins spécifiques : préparation physique, endurance, remise en forme postnatale, et bien plus encore.</p>
+          </div>
+      </div>
+  </div>
+</div>
+
+  <div class="coachs px-6 md:px-28 py-20 w-full">
+    <!-- Desktop Layout -->
+    <div class="hidden md:flex justify-between w-full">
+      <div class="text-left w-[531px] h-[567px] flex flex-col justify-between relative">
+        <div class="absolute top-0 left-0 flex flex-col justify-between">
+          <h5 class="text-black text-[24px] font-bold outlined-text-number instrument-sans pb-4">02</h5>
+          <h2 class="h2 font-medium uppercase text-[48px] text-white unbounded-heading">Nos<span class="block">coachs</span></h2>
+        </div>
+        <div class="absolute bottom-0 left-0">
+          <div class="pb-5 flex items-center">
+            <h4 class="h4 unbounded-heading uppercase text-[24px] font-medium inline-block pr-3">EMMA DUBOIS</h4>
+            <h5 class="h5 instrument-sans uppercase text-[16px] font-normal tracking-[0.32px] inline-block pl-3 border-l-[1px] border-white pl-3">HEAD COACH</h5>
+          </div>
+          <p class="p-normal instrument-sans">Certifiée CrossFit Level 3, elle se spécialise en levage olympique et en programmation de haute intensité. Son approche unique combine un œil attentif pour la technique et une passion pour aider chaque membre à surpasser ses limites.</p>
+          <h3 class="h3 text-[32px] font-bold uppercase unbounded-heading tracking-[0.32px] pt-10">"Le succès commence par une <span class="text-red">bonne posture </span>et un <span class="text-red">esprit fort</span>"</h3>
         </div>
       </div>
+      <div class="w-[552px] bg-[url('./images/rectangle-15.jpg')] bg-cover"></div>
     </div>
-  </div>
-  <div class="coachs px-28 py-20 flex justify-between w-full">
-    <div class="text-left w-[531px] h-[567px] flex flex-col justify-between relative">
-      <div class="absolute top-0 left-0 flex flex-col justify-between">
+  
+    <!-- Mobile Layout -->
+    <div class="md:hidden flex flex-col justify-center">
+      <!-- Text Section for Mobile -->
+      <div class="text-left w-full mb-10">
         <h5 class="text-black text-[24px] font-bold outlined-text-number instrument-sans pb-4">02</h5>
-        <h2 class="h2 font-medium uppercase text-[48px] text-white unbounded-heading">Nos<span class="block">coachs</span></h2>
+        <h2 class="h2 font-medium uppercase text-[32px] text-white unbounded-heading">Nos<span class="block">coachs</span></h2>
       </div>
-      <div class="absolute bottom-0 left-0">
-        <div class="pb-5 flex items-center">
-          <h4 class="h4 unbounded-heading uppercase text-[24px] font-medium inline-block pr-3">EMMA DUBOIS</h4>
-          <h5 class="h5 instrument-sans uppercase text-[16px] font-normal tracking-[0.32px] inline-block pl-3 border-l-[1px] border-white pl-3">HEAD COACH</h5>
+  
+      <!-- Carousel Section with Arrows -->
+      <div class="relative">
+        <!-- Left Arrow -->
+        <button id="prev" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-2 rounded-full z-10">
+          &#10094;
+        </button>
+  
+        <!-- Carousel for Coach Profiles -->
+        <div class="flex overflow-x-auto gap-4 no-scrollbar" id="carousel">
+          <!-- Coach Card 1 -->
+          <div class="flex-none w-[90vw] h-[300px] bg-cover" style="background-image: url('./images/rectangle-15.jpg');">
+            <div class="flex flex-col justify-end px-4 py-4 gap-2 h-full bg-gradient-to-t from-black to-transparent">
+              <h4 class="h4 unbounded-heading uppercase text-[20px] font-medium">EMMA DUBOIS</h4>
+              <h5 class="h5 instrument-sans uppercase text-[14px] font-normal tracking-[0.32px]">HEAD COACH</h5>
+              <p class="p-normal instrument-sans text-[14px]">Certifiée CrossFit Level 3, elle se spécialise en levage olympique et en programmation de haute intensité.</p>
+            </div>
+          </div>
+  
+          <!-- Additional Coach Cards -->
+          <div class="flex-none w-[90vw] h-[300px] bg-cover" style="background-image: url('./images/rectangle-15.jpg');">
+            <div class="flex flex-col justify-end px-4 py-4 gap-2 h-full bg-gradient-to-t from-black to-transparent">
+              <h4 class="h4 unbounded-heading uppercase text-[20px] font-medium">AUTRE COACH</h4>
+              <h5 class="h5 instrument-sans uppercase text-[14px] font-normal tracking-[0.32px]">COACH TITLE</h5>
+              <p class="p-normal instrument-sans text-[14px]">Description de l'autre coach.</p>
+            </div>
+          </div>
         </div>
-        <p class="p-normal instrument-sans">Certifiée CrossFit Level 3, elle se spécialise en levage olympique et en programmation de haute intensité. Son approche unique combine un œil attentif pour la technique et une passion pour aider chaque membre à surpasser ses limites.</p>
-        <h3 class="h3 text-[32px] font-bold uppercase unbounded-heading tracking-[0.32px] pt-10">"Le succès commence par une <span class="text-red">bonne posture </span>et un <span class="text-red">esprit fort</span>"</h3>
+  
+        <!-- Right Arrow -->
+        <button id="next" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-2 rounded-full z-10">
+          &#10095;
+        </button>
       </div>
+  
+      <!-- Quote -->
+      <h3 class="h3 text-[24px] md:text-[32px] font-bold uppercase unbounded-heading tracking-[0.32px] pt-10 text-left">"Le succès commence par une <span class="text-red">bonne posture</span> et un <span class="text-red">esprit fort</span>"</h3>
     </div>
-    <div class="w-[552px] bg-custom-2 bg-cover"></div>
   </div>
-  <div class="abonnements px-28 py-20 w-full bg-[url('./images/young-crossfit-athlete-doing-pull-ups-gym-handsome-man-doing-functional-training-practicing-calisthenics-min.jpg')] bg-opacity-25 bg-right-bottom">
-    <div class="pb-14 w-full">
+
+  <div class="abonnements px-6 md:px-28 py-20 w-full bg-[url('./images/young-crossfit-athlete-doing-pull-ups-gym-handsome-man-doing-functional-training-practicing-calisthenics-min.jpg')] bg-opacity-25 bg-right-bottom bg-no-repeat">
+    <div class="pb-14 w-full text-left md:text-left">
       <h5 class="text-black text-[24px] font-bold outlined-text-number instrument-sans pb-4">03</h5>
-      <h2 class="h2 font-medium uppercase text-[48px] text-white unbounded-heading">Nos<span class="block">tarifs</span></h2>
+      <h2 class="h2 font-medium uppercase text-[32px] md:text-[48px] text-white unbounded-heading">Nos<span class="block">tarifs</span></h2>
     </div>
-    <div class="flex justify-between gap-6">
-      <div class="p-10 flex flex-col bg-custom-1 w-1/3">
-        <h4 class="h4 unbounded-heading uppercase text-[24px] font-medium pb-14">SÉANCE À<span class="block">LA CARTE</span></h4>
+    
+    <div class="flex flex-col md:flex-row justify-between gap-6">
+      <!-- Card 1 -->
+      <div class="p-6 md:p-10 flex flex-col bg-custom-1 w-full md:w-1/3">
+        <h4 class="h4 unbounded-heading uppercase text-[24px] font-medium pb-10 md:pb-14">SÉANCE À<span class="block">LA CARTE</span></h4>
         <h5 class="text-[10px] uppercase instrument-sans Standard font-bold tracking-[0.96px] leading-[12.2px]">Standard</h5>
         <h5 class="text-[24px] uppercase instrument-sans Standard font-medium tracking-[0.96px] leading-[29.28px] text-red">
           15€/<span class="text-[14px]">séance</span>
@@ -131,8 +270,10 @@
           RÉSERVER
         </button>
       </div>
-      <div class="p-10 flex flex-col bg-custom-1 w-1/3">
-        <h4 class="h4 unbounded-heading uppercase text-[24px] font-medium pb-14">ABONNEMENT<span class="block">MENSUEL</span></h4>
+      
+      <!-- Card 2 -->
+      <div class="p-6 md:p-10 flex flex-col bg-custom-1 w-full md:w-1/3">
+        <h4 class="h4 unbounded-heading uppercase text-[24px] font-medium pb-10 md:pb-14">ABONNEMENT<span class="block">MENSUEL</span></h4>
         <h5 class="text-[10px] uppercase instrument-sans Standard font-bold tracking-[0.96px] leading-[12.2px]">Standard</h5>
         <h5 class="text-[24px] uppercase instrument-sans Standard font-medium tracking-[0.96px] leading-[29.28px] text-red">
           75€/<span class="text-[14px]">séance</span>
@@ -154,8 +295,10 @@
           RÉSERVER
         </button>
       </div>
-      <div class="p-10 flex flex-col bg-custom-1 w-1/3">
-        <h4 class="h4 unbounded-heading uppercase text-[24px] font-medium pb-14">ABONNEMENT<span class="block">ANNUEL</span></h4>
+      
+      <!-- Card 3 -->
+      <div class="p-6 md:p-10 flex flex-col bg-custom-1 w-full md:w-1/3">
+        <h4 class="h4 unbounded-heading uppercase text-[24px] font-medium pb-10 md:pb-14">ABONNEMENT<span class="block">ANNUEL</span></h4>
         <h5 class="text-[10px] uppercase instrument-sans Standard font-bold tracking-[0.96px] leading-[12.2px]">Standard</h5>
         <h5 class="text-[24px] uppercase instrument-sans Standard font-medium tracking-[0.96px] leading-[29.28px] text-red">
           800€/<span class="text-[14px]">séance</span>
@@ -177,103 +320,128 @@
           RÉSERVER
         </button>
       </div>
-    </div>   
+    </div>
   </div>
-  <div class="temoignages p-28 bg-red flex justify-between">
-    <div class="text-left flex flex-col relative">
+
+  <div class="temoignages p-8 md:p-28 bg-red flex flex-col md:flex-row justify-between">
+    <div class="text-left flex flex-col relative mb-8 md:mb-0">
       <h5 class="text-red text-[24px] font-bold outlined-text-number-i instrument-sans pb-4">04</h5>
-      <h2 class="h2 font-medium uppercase text-[48px] text-white unbounded-heading pb-10">Vos<span class="block">témoignages</span></h2>
-      <h4 class="h4 unbounded-heading uppercase text-[24px] font-medium pb-14">DES HISTOIRES DE <span class="text-black">SUCCÈS</span><span class="block">ET DE <span class="text-black">TRANSFORMATION</span></span></h4>
-      <div class="absolute bottom-0 left-0 flex gap-6">
-        <div class="transform rotate-180">
+      <h2 class="text-[32px] md:text-[48px] font-medium uppercase text-white unbounded-heading pb-4 md:pb-10">
+        Vos<span class="block">témoignages</span>
+      </h2>
+      <h4 class="text-[18px] md:text-[24px] font-medium uppercase pb-8 md:pb-14">
+        DES HISTOIRES DE <span class="text-black">SUCCÈS</span>
+        <span class="block">ET DE <span class="text-black">TRANSFORMATION</span></span>
+      </h4>
+      
+      <!-- Arrow Section for Desktop - Position at the bottom left -->
+      <div class="hidden md:flex absolute bottom-0 left-0 gap-6">
+        <div class="prev-arrow transform rotate-180 cursor-pointer">
           <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 13 14" fill="none">
             <path d="M0 7H11M11 7L5.5 1.5M11 7L5.5 12.5" stroke="white" stroke-width="1.5"/>
           </svg>
         </div>
-        <div>
+        <div class="next-arrow cursor-pointer">
           <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 13 14" fill="none">
             <path d="M0 7H11M11 7L5.5 1.5M11 7L5.5 12.5" stroke="white" stroke-width="1.5"/>
           </svg>
         </div>
       </div>
     </div>
-    <div class="text-left flex flex-col bg-black p-14 relative">
-      <div class="pb-20 flex items-center">
-        <h4 class="h4 unbounded-heading uppercase text-[24px] font-medium inline-block pr-3">SOPHIE</h4>
-        <h5 class="h5 instrument-sans uppercase text-[16px] font-normal tracking-[0.32px] inline-block border-l-[1px] border-red pl-3">28 ANS</h5>        
+  
+    <div class="text-left flex flex-col bg-black p-6 md:p-14 relative slider-container mb-8">
+      <div class="testimonial pb-8 md:pb-20 flex items-center">
+        <h4 class="text-[20px] md:text-[24px] font-medium inline-block pr-3">SOPHIE</h4>
+        <h5 class="text-[14px] md:text-[16px] font-normal tracking-[0.32px] inline-block border-l-[1px] border-red pl-3">28 ANS</h5>
       </div>
-      <p class="pb-16 w-[440px] text-[20px] leading-[30px] font-normal instrument-sans">Pulse m'a offert bien plus qu'un simple entraînement. J'ai découvert une communauté solidaire et des coachs qui sont là à chaque étape de mon parcours. J'ai retrouvé mon énergie et ma forme physique!</p>
-      <div class="flex items-center h-[2px] w-full bg-black relative">
-        <div class="absolute left-0 top-0 h-full bg-red transition-all duration-300 ease-in-out" style="width: 25%;"></div>
+      <p class="pb-8 md:pb-16 w-full md:w-[440px] text-[16px] md:text-[20px] leading-[24px] md:leading-[30px] font-normal instrument-sans">
+        Pulse m'a offert bien plus qu'un simple entraînement. J'ai découvert une communauté solidaire et des coachs qui sont là à chaque étape de mon parcours. J'ai retrouvé mon énergie et ma forme physique!
+      </p>
+      <div class="flex items-center h-[2px] w-full bg-black relative mb-6">
+        <div class="progress-bar absolute left-0 top-0 h-full bg-red transition-all duration-300 ease-in-out" style="width: 25%;"></div>
         <div class="h-full bg-white opacity-50 w-full"></div>
       </div>
     </div>
-  </div>
-  <div class="contact p-28 flex justify-between">
-    <div class="text-left flex flex-col relative">
-      <div class="absolute top-0 left-0 w-[487px]">
-        <h5 class="text-black text-[24px] font-bold outlined-text-number instrument-sans pb-4">05</h5>
-        <h2 class="h2 font-medium uppercase text-[48px] text-white unbounded-heading pb-10">CONTACTEZ-<span class="block">NOUS</span></h2>
-        <p class="p-normal">Des questions ? Besoin de plus d'informations ? Remplissez notre formulaire de contact et nous vous répondrons rapidement.</p>
+  
+    <!-- Arrow Section for Mobile - Position below the card -->
+    <div class="flex gap-6 mt-4 md:hidden">
+      <div class="prev-arrow transform rotate-180 cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 13 14" fill="none">
+          <path d="M0 7H11M11 7L5.5 1.5M11 7L5.5 12.5" stroke="white" stroke-width="1.5"/>
+        </svg>
       </div>
-      <div class="absolute bottom-0 left-0 w-[487px]">
-        <div class="flex justify-between border-b-[1px] border-white border-opacity-50 pb-4">
-          <h5 class="w-1/3 text-red h5 uppercase unbounded-heading">ADRESSE</h5>
-          <p class="w-2/3 text-[16px] instrument-sans">Rue de l'Exemple 123, 1000 Bruxelles</p>
+      <div class="next-arrow cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 13 14" fill="none">
+          <path d="M0 7H11M11 7L5.5 1.5M11 7L5.5 12.5" stroke="white" stroke-width="1.5"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <div class="contact p-8 md:p-28 flex flex-col md:flex-row justify-between">
+    <div class="text-left flex flex-col relative mb-8 md:mb-0">
+      <div class="absolute top-0 left-0 w-full md:w-[487px]">
+        <h5 class="text-black text-[24px] font-bold outlined-text-number instrument-sans pb-4">05</h5>
+        <h2 class="h2 font-medium uppercase text-[32px] md:text-[48px] text-white unbounded-heading pb-4 md:pb-10">
+          CONTACTEZ-<span class="block">NOUS</span>
+        </h2>
+        <p class="p-normal text-[14px] md:text-[16px]">Des questions ? Besoin de plus d'informations ? Remplissez notre formulaire de contact et nous vous répondrons rapidement.</p>
+      </div>
+      <div class="absolute bottom-0 left-0 w-full md:w-[487px]">
+        <div class="flex flex-col md:flex-row justify-between border-b-[1px] border-white border-opacity-50 pb-4">
+          <h5 class="w-full md:w-1/3 text-red h5 uppercase unbounded-heading">ADRESSE</h5>
+          <p class="w-full md:w-2/3 text-[16px] instrument-sans">Rue de l'Exemple 123, 1000 Bruxelles</p>
         </div>
       </div>
     </div>
-    <div class="text-left flex flex-col bg-black p-14 relative h-[350px] w-">
+  
+    <div class="text-left flex flex-col bg-black p-6 md:p-14 relative h-auto w-full md:w-1/2">
       <form>
-        <div class="flex justify-between gap-2">
-          <div class="flex flex-col w-1/2">
+        <div class="flex flex-col md:flex-row justify-between gap-2">
+          <div class="flex flex-col w-full md:w-1/2">
             <label class="uppercase">Name*</label>
             <input name="name" class="bg-white h-[40px] px-2 py-1 text-[14px] uppercase font-bold instrument-sans leading-[17.08px] tracking-[1.92px] text-red" type="text" />
           </div>
-          <div class="flex flex-col w-1/2">
+          <div class="flex flex-col w-full md:w-1/2">
             <label class="uppercase">Surname*</label>
             <input name="surname" class="bg-white h-[40px] px-2 py-1 text-[14px] uppercase font-bold instrument-sans leading-[17.08px] tracking-[1.92px] text-red" type="text" />
           </div>
         </div>
-
-        <div class="pt-10 flex justify-between gap-2">
-            <div class="flex flex-col w-1/2">
-              <label class="uppercase">Phone Number*</label>
-              <input name="phone" class="bg-white h-[40px] px-2 py-1 text-[14px] uppercase font-bold instrument-sans leading-[17.08px] tracking-[1.92px] text-red" type="text" />
-            </div>
-            <div class="flex flex-col w-1/2">
-              <label class="uppercase">E-Mail*</label>
-              <input name="email" class="bg-white h-[40px] px-2 py-1 text-[14px] uppercase font-bold instrument-sans leading-[17.08px] tracking-[1.92px] text-red" type="text" />
-            </div>
+  
+        <div class="pt-10 flex flex-col md:flex-row justify-between gap-2">
+          <div class="flex flex-col w-full md:w-1/2">
+            <label class="uppercase">Phone Number*</label>
+            <input name="phone" class="bg-white h-[40px] px-2 py-1 text-[14px] uppercase font-bold instrument-sans leading-[17.08px] tracking-[1.92px] text-red" type="text" />
+          </div>
+          <div class="flex flex-col w-full md:w-1/2">
+            <label class="uppercase">E-Mail*</label>
+            <input name="email" class="bg-white h-[40px] px-2 py-1 text-[14px] uppercase font-bold instrument-sans leading-[17.08px] tracking-[1.92px] text-red" type="text" />
+          </div>
         </div>
-
-        <div class="pt-10 flex justify-between gap-2">
-            <div class="flex flex-col w-full">
-              <label class="uppercase">Your Message*</label>
-              <textarea name="text" class="bg-white h-150 px-2 py-1 text-[14px] uppercase font-bold instrument-sans leading-[17.08px] tracking-[1.92px] text-red" type="text"></textarea>
-            </div>
+  
+        <div class="pt-10 flex flex-col">
+          <div class="flex flex-col w-full">
+            <label class="uppercase">Your Message*</label>
+            <textarea name="text" class="bg-white h-32 px-2 py-1 text-[14px] uppercase font-bold instrument-sans leading-[17.08px] tracking-[1.92px] text-red"></textarea>
+          </div>
         </div>
-
-        <div class="pt-10 flex">
-            <div class="flex flex-col w-full">
-                <div class="flex h-6 items-center gap-2">
-                    <input id="comments" name="comments" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
-                    <label class="uppercase">J'accepte la politique de confidentialité*. </label>
-                </div>
-            </div>
+  
+        <div class="pt-10 flex flex-col">
+          <div class="flex h-6 items-center gap-2">
+            <input id="comments" name="comments" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+            <label class="uppercase">J'accepte la politique de confidentialité*. </label>
+          </div>
         </div>
-
-        <div class="pt-10 flex">
-            <div class="flex-col w-full">
-                <a href="#" class="hover:text-gray-300">
-                    <button class="h-10 w-full px-7 py-3.5 bg-red rounded-full justify-center items-center gap-2.5 inline-flex font-semibold">
-                      RÉSERVER 
-                      <svg xmlns="http://www.w3.org/2000/svg" width="13" height="14" viewBox="0 0 13 14" fill="none">
-                        <path d="M0 7H11M11 7L5.5 1.5M11 7L5.5 12.5" stroke="white" stroke-width="1.5"/>
-                      </svg>
-                    </button>
-                </a>
-            </div>
+  
+        <div class="pt-10 flex flex-col">
+          <div class="flex-col w-full">
+            <button class="h-10 w-full px-7 py-3.5 bg-red rounded-full justify-center items-center gap-2.5 inline-flex font-semibold hover:bg-red-600">
+              RÉSERVER 
+              <svg xmlns="http://www.w3.org/2000/svg" width="13" height="14" viewBox="0 0 13 14" fill="none">
+                <path d="M0 7H11M11 7L5.5 1.5M11 7L5.5 12.5" stroke="white" stroke-width="1.5"/>
+              </svg>
+            </button>
+          </div>
         </div>
       </form>
     </div>
@@ -282,4 +450,96 @@
 
   </div>
 </body>
+
+<script>
+  // Slider functionality remains the same
+  let testimonials = [
+    {
+      name: "SOPHIE",
+      age: "28 ANS",
+      text: "Pulse m'a offert bien plus qu'un simple entraînement. J'ai découvert une communauté solidaire et des coachs qui sont là à chaque étape de mon parcours. J'ai retrouvé mon énergie et ma forme physique!"
+    },
+    {
+      name: "JEAN",
+      age: "34 ANS",
+      text: "Grâce à Pulse, j'ai pu transformer ma vie en mieux. J'ai atteint mes objectifs de fitness avec l'aide de coachs incroyables."
+    },
+    // Add more testimonials here
+  ];
+
+  let currentTestimonial = 0;
+
+  function updateTestimonial(index) {
+    const nameElement = document.querySelector('.testimonial h4');
+    const ageElement = document.querySelector('.testimonial h5');
+    const textElement = document.querySelector('.slider-container p');
+
+    nameElement.textContent = testimonials[index].name;
+    ageElement.textContent = testimonials[index].age;
+    textElement.textContent = testimonials[index].text;
+  }
+
+  document.querySelector('.next-arrow').addEventListener('click', function () {
+    currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+    updateTestimonial(currentTestimonial);
+  });
+
+  document.querySelector('.prev-arrow').addEventListener('click', function () {
+    currentTestimonial = (currentTestimonial - 1 + testimonials.length) % testimonials.length;
+    updateTestimonial(currentTestimonial);
+  });
+</script>
+
+<script>
+  // Toggle mobile menu visibility
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const closeMenuButton = document.getElementById('close-menu');
+
+  menuToggle.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+
+  closeMenuButton.addEventListener('click', () => {
+    mobileMenu.classList.add('hidden'); // Hide the menu
+  });
+
+  const swiper = new Swiper('.carousel', {
+    slidesPerView: 1,
+    spaceBetween: 10,
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    },
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+});
+
+</script>
+
+<script>
+  // Selecting the carousel and buttons
+const carousel = document.getElementById('carousel');
+const prevButton = document.getElementById('prev');
+const nextButton = document.getElementById('next');
+
+// Scroll left
+prevButton.addEventListener('click', () => {
+  carousel.scrollBy({
+    left: -carousel.offsetWidth,
+    behavior: 'smooth'
+  });
+});
+
+// Scroll right
+nextButton.addEventListener('click', () => {
+  carousel.scrollBy({
+    left: carousel.offsetWidth,
+    behavior: 'smooth'
+  });
+});
+</script>
+
 </html>

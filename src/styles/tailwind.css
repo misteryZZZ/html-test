@@ -71,3 +71,9 @@ input.normal {
   font-style: normal;
   font-variation-settings: "wdth" 100;
 }
+
+/* Progress border styles */
+#progress-border {
+  width: 50%; /* Adjust this dynamically with JavaScript */
+  transition: width 0.3s ease;
+}
